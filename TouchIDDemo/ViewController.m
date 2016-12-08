@@ -10,6 +10,7 @@
 #import <SVProgressHUD.h>
 #import <LocalAuthentication/LocalAuthentication.h>
 #import <LocalAuthentication/LAError.h>
+#import "NSString+QDTouchID.h"
 
 
 @interface ViewController ()
@@ -27,8 +28,17 @@
 
     
     //这个 demo 是以目前的支付宝为例子写的
-    [self startTouchIDWithPolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics];
+    
+    if ([NSString judueIPhonePlatformSupportTouchID])
+    {
+        [self startTouchIDWithPolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics];
 
+    }
+    else
+    {
+        NSLog(@"您的设置硬件暂时不支持指纹识别");
+    }
+    
 }
 
 - (void)startTouchIDWithPolicy:(LAPolicy )policy{
@@ -126,7 +136,16 @@
 
 - (IBAction)authrizeAction1:(id)sender {
     
-    [self BaseDemo];
+    if([NSString judueIPhonePlatformSupportTouchID]){
+        
+        [self BaseDemo];
+        
+    }else{
+        
+        NSLog(@"您的设置硬件不支持指纹识别");
+    }
+    
+    
 }
 
 - (void)BaseDemo{
