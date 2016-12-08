@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,16 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5o-l8-Ph9">
-                                <rect key="frame" x="149" y="180" width="77" height="30"/>
-                                <state key="normal" title="点我去验证"/>
+                                <state key="normal" title="支付宝 Demo"/>
                                 <connections>
                                     <action selector="authrizeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r4e-AE-yus"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ts5-R2-04t">
+                                <state key="normal" title="最基本使用 demo"/>
+                                <connections>
+                                    <action selector="authrizeAction1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HGV-n7-2Sf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ts5-R2-04t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VRG-Dw-g5L"/>
                             <constraint firstItem="r5o-l8-Ph9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="160" id="YZT-Fu-1Hr"/>
+                            <constraint firstItem="ts5-R2-04t" firstAttribute="top" secondItem="r5o-l8-Ph9" secondAttribute="bottom" constant="70" id="laZ-HR-15s"/>
                             <constraint firstItem="r5o-l8-Ph9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nE6-kH-4Pi"/>
                         </constraints>
                     </view>

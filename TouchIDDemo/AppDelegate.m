@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    NSLog(@"%s",__func__);
     return YES;
 }
 
@@ -31,7 +33,41 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    
+     NSLog(@"%s",__func__);
+   /*
+    LAContext *context = [[LAContext alloc]init];//使用 new 不会给一些属性初始化赋值
+    NSError *error;
+    BOOL value = [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if (value)
+        {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSData *oldDate = [defaults objectForKey:@"123"];
+            NSData *newData = context.evaluatedPolicyDomainState;
+            NSLog(@"oldDate-------%@",oldDate);
+            NSLog(@"newData-------%@",newData);
+            if ([newData isEqualToData:oldDate])
+            {
+                NSLog(@"指纹没有变");
+            }
+            else
+            {
+                NSLog(@"指纹有改变!!!!!!!!!!!!!");
+                //指纹有改变之后就需要提醒用户去重新输入密码;
+                
+            }
+        }
+        else
+        {
+            
+        }
+    });
+    
+   */
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
